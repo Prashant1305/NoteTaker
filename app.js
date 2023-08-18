@@ -2,30 +2,20 @@
 const mainbody = document.querySelector("#main");
 const addbtn = document.querySelector("#addBtn");
 
-
-
-let index = 0;
 addNote();
 addbtn.addEventListener('click', () => {
     addNote();
 })
 function addNote() {
-    mainbody.innerHTML += `<div class="note">
-        <div class="tool">
-            <i class="fas fa-save" id ="A${index}" ></i>
-            <i class="fas fa-trash"></i>
-        </div>
-        <textarea></textarea>
+    const newNode=document.createElement("div");
+    newNode.classList="note";
+    newNode.innerHTML=`<div class="tool">
+    <i class="save fas fa-save"></i>
+    <i class="trash fas fa-trash"></i>
     </div>`;
-    let delBtn = document.querySelector(`#A${index}`);
-    // console.log(delBtn);
-    // console.log(typeof(delBtn));
- 
-     delBtn.addEventListener("click", () => {
-    //     const note = document.querySelector(".note");
-    //     note.remove();
-        console.log("delete was clicked");
-    })
-    index++;
+    newNode.querySelector(".trash").addEventListener("click",()=>{
+        newNode.remove();
+    });
+    mainbody.prepend(newNode);
 
 }
