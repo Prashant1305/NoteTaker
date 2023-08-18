@@ -45,7 +45,7 @@ function addNote(text="") {
     const d = new Date();
 
     newNode.innerHTML=`<div class="tool">
-    <label for="tool" class="rgt">${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}<br>${d.getDate()}/${d.getMonth()}/${d.getFullYear()}</label>
+    <label for="tool" class="rgt">${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}<br>${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}</label>
         <i class="save fas fa-save"></i>
         <i class="trash fas fa-trash"></i>
     </div>
